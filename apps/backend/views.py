@@ -49,5 +49,28 @@ class LoginView(views.MethodView):
         return self._render(message=message)
 
 
+class LogoutView(views.MethodView):
+    """
+    登出
+    """
+    decorators = [login_required]
+
+    def get(self):
+        session.pop(config['development'].BACKEND_USER_ID)
+        return redirect(url_for('backend.login'))
+
+
+class ProfileView(views.MethodView):
+    """
+    个人信息
+    """
+    decorators = [login_required]
+
+    def get(self):
+        return render_template('backend/b_profile.html')
+
+
 backend.add_url_rule('/index/', view_func=IndexView.as_view('index'))
 backend.add_url_rule('/login/', view_func=LoginView.as_view('login'))
+backend.add_url_rule('/logout/', view_func=LogoutView.as_view('logout'))
+backend.add_url_rule('/profile/', view_func=ProfileView.as_view('profile'))

@@ -44,22 +44,22 @@
           <a href="#">个人中心<span></span></a>
           <ul class="subnav">
             <li><a href="{{ url_for('backend.profile') }}">个人信息</a></li>
-            <li><a href="{{ url_for('backend.resetpwd') }}">修改密码</a></li>
-            <li><a href="{{ url_for('backend.resetemail') }}">修改邮箱</a></li>
+            <li><a href="#">修改密码</a></li>
+            <li><a href="#">修改邮箱</a></li>
           </ul>
         </li>
 
-        <li class="nav-group post-manage"><a href="{{ url_for('backend.posts') }}">帖子管理</a></li>
+        <li class="nav-group post-manage"><a href="#">帖子管理</a></li>
         <li class="comments-manage"><a href="#">评论管理</a></li>
-        <li class="board-manage"><a href="{{ url_for('backend.boards') }}">板块管理</a></li>
+        <li class="board-manage"><a href="#">板块管理</a></li>
 
-        <li class="nav-group user-manage"><a href="{{ url_for('backend.front_users') }}">用户管理</a></li>
+        <li class="nav-group user-manage"><a href="#">用户管理</a></li>
         <li class="role-manage"><a href="#">组管理</a></li>
 
         {#        {% if cms_user.is_superadmin %}#}
         {% if true %}
-          <li class="nav-group cmsuser-manage"><a href="{{ url_for('backend.cmsusers') }}">CMS用户管理</a></li>
-          <li class="cmsrole-manage"><a href="{{ url_for('backend.cmsroles') }}">CMS组管理</a></li>
+          <li class="nav-group cmsuser-manage"><a href="#">CMS用户管理</a></li>
+          <li class="cmsrole-manage"><a href="#">CMS组管理</a></li>
         {% endif %}
       </ul>
     </div>
