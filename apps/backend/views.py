@@ -3,6 +3,7 @@ from flask import render_template, redirect, url_for
 from apps.backend import backend
 from apps.backend.models import BackendUser
 from apps.backend.forms import LoginForm
+from apps.backend.decorators import login_required
 from config import config
 
 
@@ -10,6 +11,8 @@ class IndexView(views.MethodView):
     """
     后台主页
     """
+
+    decorators = [login_required]  # 登录验证
 
     def get(self):
         return render_template('backend/b_index.html')
