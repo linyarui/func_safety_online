@@ -6,6 +6,15 @@ from apps.backend.forms import LoginForm
 from config import config
 
 
+class IndexView(views.MethodView):
+    """
+    后台主页
+    """
+
+    def get(self):
+        return render_template('backend/b_index.html')
+
+
 class LoginView(views.MethodView):
     """
     后台管理员登录
@@ -37,4 +46,5 @@ class LoginView(views.MethodView):
         return self._render(message=message)
 
 
+backend.add_url_rule('/index/', view_func=IndexView.as_view('index'))
 backend.add_url_rule('/login/', view_func=LoginView.as_view('login'))
