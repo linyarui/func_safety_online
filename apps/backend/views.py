@@ -86,7 +86,7 @@ class ResetPwdView(views.MethodView):
         if reset_pwd_form.validate():
             old_pwd = reset_pwd_form.old_pwd.data
             new_pwd = reset_pwd_form.new_pwd.data
-            user = g.cms_user
+            user = g.backend_user
             if user.check_password(old_pwd):
                 user.password = new_pwd
                 db.session.commit()

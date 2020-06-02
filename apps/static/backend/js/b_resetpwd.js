@@ -10,7 +10,7 @@ $(function () {
     var newpwd = newpwdE.val();
     var newpwd2 = newpwd2E.val();
 
-    //这里使用我们自己封装好的bbsajax，它具有了csrf
+    //这里使用我们自己封装好的iqajax，它具有了csrf
     iqajax.post({
       'url': '/backend/resetpwd/',
       'data': {
@@ -26,7 +26,9 @@ $(function () {
           oldpwdE.val('');   //完成请求后把表单输入的值清空
           newpwdE.val('');
           newpwd2E.val('');
-          window.location.href = '/backend/login/'
+          setTimeout(function () {
+            window.location.href = '/backend/login/'
+          }, 3000);
         } else {
           xtalert.alertError(data['message']);
           oldpwdE.val('');
