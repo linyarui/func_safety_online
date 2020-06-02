@@ -30,7 +30,7 @@ class Config:
     MAIL_PORT = '465'
     MAIL_USE_SSL = True  # 使用SSL，端口号为465或587
     MAIL_USERNAME = '2237091767@qq.com'
-    MAIL_PASSWORD = 'curivqbglcgodich'  # 注意，这里的密码不是邮箱密码，而是授权码
+    MAIL_PASSWORD = '*****'  # 注意，这里的密码不是邮箱密码，而是授权码
     MAIL_DEFAULT_SENDER = '2237091767@qq.com'  # 默认发送者
 
 
