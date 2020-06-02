@@ -3,7 +3,7 @@ from flask_migrate import Migrate, MigrateCommand
 from apps import create_app
 from exts import db
 # from apps.front.models import *
-# from apps.backend.models import BackendUser
+from apps.backend.models import BackendUser
 
 app = create_app()
 
